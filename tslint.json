@@ -2,6 +2,7 @@
   "rulesDirectory": [
     "codelyzer"
   ],
+
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -85,7 +86,7 @@
     ],
     "prefer-const": true,
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "radix": true,

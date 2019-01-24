@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: npm run test
+    ports:
+      - "6061:8080"
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
