@@ -1,11 +1,11 @@
 import {DispathEventT62} from './DispathEventT62';
 import {catchError, tap} from 'rxjs/operators';
-import {error} from 'util';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {MessageService} from './MessageService';
 import {Observable, of} from 'rxjs';
+import {Injectable} from '@angular/core';
 
-
+@Injectable()
 export class Service {
 
   private headersJSON: HttpHeaders = new HttpHeaders({
@@ -34,8 +34,8 @@ export class Service {
   }
 
 
-  public get(link: string, callBack: Function, isShowSpinner = true) {
-    if (!link || !callBack) {
+  public get(link: string, isShowSpinner = true): Observable<Object> {
+    if (!link) {
       return;
     }
     if (isShowSpinner) {
@@ -48,8 +48,8 @@ export class Service {
   }
 
 
-  public post(data: any, link: string, callBack: Function, contentType: string = 'json', isShowSpinner = true) {
-    if (!data || !link || !callBack) {
+  public post(data: any, link: string, contentType: string = 'json', isShowSpinner = true): Observable<Object> {
+    if (!data || !link) {
       return;
     }
     if (typeof data !== 'string') {

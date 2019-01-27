@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SpinnerModel} from './core/spinner/spinner.model';
 import {MessageService} from './core/utils/MessageService';
 import {Service} from './core/utils/Service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {Service} from './core/utils/Service';
     BrowserModule,
     BrowserAnimationsModule,
     SpinnerModel,
+    HttpClientModule,
   ],
   providers: [MessageService, Service],
   bootstrap: [AppComponent]
