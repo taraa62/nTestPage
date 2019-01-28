@@ -40,7 +40,7 @@ class BLogger {
   }
 
   debug(mess, obj) {
-    mess = this._getMessage(mess, error);
+    mess = this._getMessage(mess, obj);
     if (mess.indexOf("UnhandledPromiseRejectionWarning") > -1)
       this.error(mess, obj)
     else this._print(mess, "debug");
@@ -84,9 +84,14 @@ class BLogger {
       mess = JSON.stringify(mess);
     }
     value = getMessError(value);
-    if (value && typeof value !== "string") mess += "\n " + JSON.stringify(value);
+    if (value) {
+      if (typeof value !== "string") mess += "\n " + JSON.stringify(value);
+      else mess += "\n" +value;
+    }
+
     return mess;
   }
+
 
 
 }

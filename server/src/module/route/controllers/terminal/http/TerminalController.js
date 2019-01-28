@@ -11,6 +11,7 @@ class TerminalController extends Controller {
 
     get(req, res, next) {
         if (!this.cmdModule) {
+            this.logger.error("cmd module is not run!")
             next();
         } else {
             res.render("terminal");

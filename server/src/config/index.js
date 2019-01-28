@@ -76,8 +76,6 @@ module.exports = {
                         timeForResetKey: 5 //minute for reset key
                     }
                 }
-
-
             },
             comment: "initialization after initialization all DB (if use)!!!"
         }, {
@@ -116,7 +114,7 @@ module.exports = {
             }
         },
         {
-            isUse: false,
+            isUse: true,
             type: "other",
             name: "cmd_utils",
             path: "./cmdUtils/CMDUtilsModule",
