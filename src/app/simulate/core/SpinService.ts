@@ -1,9 +1,10 @@
 import {Observable, Subscriber} from 'rxjs';
+import {Service} from '../../core/utils/Service';
 
 export class SpinService {
 
 
-  constructor() {
+  constructor(private service: Service) {
 
   }
 

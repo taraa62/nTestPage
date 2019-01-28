@@ -602,7 +602,7 @@ module.exports = {
     , '.swi': 'application/vnd.aristanetworks.swi'
     , '.m3u8': 'application/vnd.apple.mpegurl'
     , '.mpkg': 'application/vnd.apple.installer+xml'
-    , '.atx': 'application/vnd.antix.game-component'
+    , '.atx': 'application/vnd.antix.games-component'
     , '.fti': 'application/vnd.anser-web-funds-transfer-initiation'
     , '.cii': 'application/vnd.anser-web-certificate-issue-initiation'
     , '.apk': 'application/vnd.android.package-archive'
