@@ -1,21 +1,33 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {DispathEventT62, EventT62} from './core/utils/DispathEventT62';
-import {ManagerGames} from './games/ManagerGames';
 import {Service} from './core/utils/Service';
+import {Router} from "@angular/router";
+import {AuthenticationService} from "./core/_services/authentication.service";
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
 
   title = 'nTestPage';
 
-  constructor(service: Service) {
+  constructor(public service: Service,
+              private router: Router,
+              private authenticationService: AuthenticationService) {
+
     DispathEventT62.registerComponent('APP_Component', this);
-    new ManagerGames();
+
+
+    //new ManagerGames();
+  }
+
+  public logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }
 

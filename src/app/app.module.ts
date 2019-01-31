@@ -8,6 +8,10 @@ import {MessageService} from './core/utils/MessageService';
 import {Service} from './core/utils/Service';
 import {HttpClientModule} from '@angular/common/http';
 
+import {HomeModule} from "./pages/home/module";
+import {FormsModule} from "@angular/forms";
+import {routing} from "./routes";
+
 
 @NgModule({
   declarations: [
@@ -17,8 +21,10 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    routing,
     SpinnerModel,
     HttpClientModule,
+    HomeModule
   ],
   providers: [MessageService, Service],
   bootstrap: [AppComponent]

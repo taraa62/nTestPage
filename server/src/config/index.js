@@ -87,14 +87,14 @@ module.exports = {
                 isUseHttpRoute: true,
                 isUseSocketRoute: true,
                 httpControllers: {
-                    // user: "./controllers/base/http/PassportJWTController",
-                    // google: "./controllers/base/http/PassportGoogle",
-                    test: "./controllers/base/http/Test",
+                    // user: "./controllers/home/http/PassportJWTController",
+                    // google: "./controllers/home/http/PassportGoogle",
+                    test: "./controllers/home/http/Test",
                     terminal: "./controllers/terminal/http/TerminalController",
                     donor: "./controllers/donor/http/DonorController"
                 },
                 socketControllers: {
-                    test: "./controllers/base/socket/Test",
+                    test: "./controllers/home/socket/Test",
                     terminal: "./controllers/terminal/socket/TerminalController",
                 }
             },
