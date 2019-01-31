@@ -8,19 +8,21 @@ import {MessageService} from './core/utils/MessageService';
 import {Service} from './core/utils/Service';
 import {HttpClientModule} from '@angular/common/http';
 
-import {HomeModule} from "./pages/home/module";
-import {FormsModule} from "@angular/forms";
-import {routing} from "./routes";
+import {HomeModule} from './pages/home/module';
+import {routing} from './routes';
+import {LoginComponent} from './pages/login/login';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
-
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     routing,
     SpinnerModel,
     HttpClientModule,

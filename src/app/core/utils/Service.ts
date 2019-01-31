@@ -39,7 +39,7 @@ export class Service {
       return;
     }
     if (isShowSpinner) {
-      DispathEventT62.dispathEvent(this, 'HIDE_SPINNER');
+      DispathEventT62.dispathEvent(this, 'SHOW_SPINNER');
     }
     return this.http.get(link).pipe(tap(data => DispathEventT62.dispathEvent(this, 'HIDE_SPINNER')),
       catchError(this.handleError(link, []))
@@ -60,7 +60,7 @@ export class Service {
     console.info('mess request ->' + data);
 
     if (isShowSpinner) {
-      DispathEventT62.dispathEvent(this, 'HIDE_SPINNER');
+      DispathEventT62.dispathEvent(this, 'SHOW_SPINNER');
     }
 
     const headers = (contentType === 'json') ? this.headersJSON : this.headersXML;

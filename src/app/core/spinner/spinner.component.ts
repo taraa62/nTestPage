@@ -1,7 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DispathEventT62} from '../utils/DispathEventT62';
 
 
 export declare type TypeDisplay = 'none' | 'inline';
+
+export enum TypeEVENT {
+  SHOW_SPINNER = 'SHOW_SPINNER',
+  HIDE_SPINNER = 'HIDE_SPINNER'
+};
 
 
 @Component({
@@ -16,7 +22,8 @@ export class SpinnerComponent {
   @Input() visible: TypeDisplay;
 
   constructor() {
-
+    DispathEventT62.addEventListener('SHOW_SPINNER', this.show, this);
+    DispathEventT62.addEventListener('HIDE_SPINNER', this.hide, this);
   }
 
 

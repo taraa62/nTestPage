@@ -1,11 +1,13 @@
-import {HomeComponent} from "./pages/home/page";
-import {RouterModule, Routes} from "@angular/router";
+import {HomeComponent} from './pages/home/page';
+import {RouterModule, Routes} from '@angular/router';
+import {AuthGuard} from './pages/login/AuthGuard';
+import {LoginComponent} from './pages/login/login';
 
 const appRoutes: Routes = [
 
 
-  {path: '', component: HomeComponent},
-
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: ''},
 ];
 
