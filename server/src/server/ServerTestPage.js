@@ -24,4 +24,4 @@ class Server extends BaseServer {
 
 module.exports = Server;
 
-new Server();
+

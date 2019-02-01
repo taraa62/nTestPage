@@ -20,11 +20,11 @@ class RouteModule extends BModule {
 
 
             //  console.log("mask is  ", this.getUrl2(":url", ":ww"))
-          /*  this.route.post(this.getUrl(":controller", ":action"), async (req, res, next) => {
+            this.route.post(this.getUrl(":controller", ":action"), async (req, res, next) => {
                 // console.log('\n params post=>  is', req.params);
                 await this.controller.runHttp(req.params.controller, req.params.action, req, res, next);
 
-            });*/
+            });
         }
 
         this.server.app.use(this.route);

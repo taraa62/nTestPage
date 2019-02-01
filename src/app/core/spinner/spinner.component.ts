@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DispathEventT62} from '../utils/DispathEventT62';
+import {DispathEventT62, EventT62} from '../utils/DispathEventT62';
 
 
 export declare type TypeDisplay = 'none' | 'inline';
@@ -27,12 +27,14 @@ export class SpinnerComponent {
   }
 
 
-  public show(): void {
+  public show(event: EventT62): void {
     this.visible = 'inline';
+    console.log("show spinner: " + event.dispathObj.constructor.name);
   }
 
-  public hide(): void {
+  public hide(event: EventT62): void {
     this.visible = 'none';
+    console.log("hide spinner: " + event.dispathObj.constructor.name);
   }
 
 }

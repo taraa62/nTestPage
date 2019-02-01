@@ -9,7 +9,7 @@ class Test extends Controller {
 
     }
 
-    async test(req, res, nesx) {
+    async test(req, res, next) {
         res.send("hello")
     }
 
@@ -108,6 +108,13 @@ class Test extends Controller {
     notAuthPoint(req, res, next) {
         res.send("You is not authorization!!! send TEST controller")
     }
+
+
+    //**********************
+
+  async testUser(req, res, next) {
+    res.json({ id: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: "Admin" , token:"govnoToken"});
+  }
 
 }
 

@@ -1,4 +1,3 @@
-
 export class DispathEventT62 {
 
   private static _isRun = false;
@@ -106,6 +105,7 @@ export class DispathEventT62 {
         const arr = this._objEventListener.get(event);
         arr.map(v => {
           v.dataDist = dataDisp;
+          v.dispathObj = dispObj;
           if (v.bind) {
             v.callback.bind(v.bind)(v);
           } else {
@@ -123,6 +123,7 @@ export class DispathEventT62 {
 export class EventT62 {
 
   public dataDist: Object;
+  public dispathObj: Object;
 
   constructor(public event: string, public callback: Function, public bind: Object = null, public dataListener: Object = null) {
 

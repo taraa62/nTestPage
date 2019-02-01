@@ -6,7 +6,7 @@ module.exports = {
     type: "server",
     // contentTypes: require("./content-type"),
     server: {
-        port: 8082,
+        port: 8081,
         x_powered_by: "mask",
         listDisableRoute: ['/', '/favicon.ico'],
         corsWhitelist: ['http://localhost:4200', 'http://localhost:8080', "*"],
@@ -89,12 +89,11 @@ module.exports = {
                 httpControllers: {
                     // user: "./controllers/home/http/PassportJWTController",
                     // google: "./controllers/home/http/PassportGoogle",
-                    test: "./controllers/home/http/Test",
-                    terminal: "./controllers/terminal/http/TerminalController",
-                    donor: "./controllers/donor/http/DonorController"
+                    test: "./controllers/base/http/Test",
+                    terminal: "./controllers/terminal/http/TerminalController"
                 },
                 socketControllers: {
-                    test: "./controllers/home/socket/Test",
+                    test: "./controllers/base/socket/Test",
                     terminal: "./controllers/terminal/socket/TerminalController",
                 }
             },

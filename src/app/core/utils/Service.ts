@@ -56,9 +56,6 @@ export class Service {
       data = (data !== null) ? JSON.stringify(data) : null;
     }
 
-    console.info('link request ->' + link);
-    console.info('mess request ->' + data);
-
     if (isShowSpinner) {
       DispathEventT62.dispathEvent(this, 'SHOW_SPINNER');
     }
@@ -70,9 +67,12 @@ export class Service {
     return this.http.post(link, data, {
       headers: headers,
       responseType: responseType
-    }).pipe(tap((data: any) => DispathEventT62.dispathEvent(this, 'HIDE_SPINNER')),
-      catchError(this.handleError(link, []))
-    );
+    }).pipe( tap(data => {
+        console.log(data);
+        DispathEventT62.dispathEvent(this, 'HIDE_SPINNER');
+      }),
+      catchError(this.handleError(link)
+      ));
 
   }
 
@@ -86,6 +86,7 @@ export class Service {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
+      console.error("govno!!!");
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 

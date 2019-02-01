@@ -1,13 +1,13 @@
 {
-  "name": "docker_utils",
-  "version": "1.0.6",
-  "description": "docker utils",
+  "name": "mypage",
+  "version": "1.0.1",
+  "description": "page for nTestPage",
   "main": "entry.js",
   "scripts": {
     "test": "node ./src/server/Server.js -test",
     "testAnton": "node ./src/server/Server.js -test LOG_FOLDER=D://Projects/google-plugin/google-plugin-active-server",
     "start": "node ./src/server/Server.js",
-    "pmRun": "pm2 reload ecosystem.config.js -- only=cloaker ",
+    "pmRun": "pm2 reload ecosystem.config.js -- only=mypage ",
     "sud": "node entry.js"
   },
   "autaxios.gethor": "",
