@@ -14,8 +14,7 @@ import {LoginComponent} from './pages/login/login';
 import {ReactiveFormsModule} from '@angular/forms';
 import {JwtInterceptor} from "./core/_helpers/jwt.interceptor";
 import {ErrorInterceptor} from "./core/_helpers/error.interceptor";
-import {HomeComponent} from "./pages/home/page";
-
+import {TableModule} from "./pages/tableUserCofnig/module";
 
 
 @NgModule({
@@ -30,7 +29,9 @@ import {HomeComponent} from "./pages/home/page";
     routing,
     SpinnerModel,
     HttpClientModule,
-    HomeModule
+    HomeModule,
+    TableModule,
+
   ],
   providers: [MessageService, Service,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

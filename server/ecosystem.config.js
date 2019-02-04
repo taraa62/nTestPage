@@ -5,7 +5,7 @@ module.exports = {
             name: 'mypage',
             script: "entry.js",
             kill_timeout: 200,
-            exec_mode: "mypage",
+            exec_mode: "cluster",
             max_memory_restart: "5G",
             instances: 1,
             watch: false,
